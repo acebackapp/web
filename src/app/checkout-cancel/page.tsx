@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function CheckoutCancelPage() {
+function CheckoutCancelContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('order_id');
 
@@ -64,5 +64,22 @@ export default function CheckoutCancelPage() {
         You can close this window and return to the app.
       </p>
     </div>
+  );
+}
+
+export default function CheckoutCancelPage() {
+  return (
+    <Suspense fallback={
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+      }}>
+        Loading...
+      </div>
+    }>
+      <CheckoutCancelContent />
+    </Suspense>
   );
 }
