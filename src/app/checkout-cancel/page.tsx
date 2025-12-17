@@ -8,13 +8,19 @@ function CheckoutCancelContent() {
   const orderId = searchParams.get('order_id');
 
   useEffect(() => {
-    // Auto-close after 3 seconds
+    // Attempt to deep link back to the app
+    const deepLinkUrl = `aceback://checkout/cancel${orderId ? `?order_id=${orderId}` : ''}`;
+
+    // Try to open the app via deep link
+    window.location.href = deepLinkUrl;
+
+    // Fallback: close window after 3 seconds if deep link doesn't work
     const timer = setTimeout(() => {
       window.close();
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [orderId]);
 
   return (
     <div style={{
