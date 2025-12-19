@@ -9,7 +9,7 @@ function CheckoutCancelContent() {
 
   useEffect(() => {
     // Attempt to deep link back to the app
-    const deepLinkUrl = `aceback://checkout/cancel${orderId ? `?order_id=${orderId}` : ''}`;
+    const deepLinkUrl = `com.discr.app://checkout/cancel${orderId ? `?order_id=${orderId}` : ''}`;
 
     // Try to open the app via deep link
     window.location.href = deepLinkUrl;

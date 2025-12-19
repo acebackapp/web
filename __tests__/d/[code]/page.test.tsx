@@ -113,7 +113,7 @@ describe('Disc Landing Page', () => {
     render(<DiscLandingPage />);
 
     await waitFor(() => {
-      expect(localStorage.getItem('aceback_deferred_code')).toBe('TEST123');
+      expect(localStorage.getItem('discr_deferred_code')).toBe('TEST123');
     });
   });
 });

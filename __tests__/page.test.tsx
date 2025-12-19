@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import Home from '@/app/page';
 
 describe('Home (Splash Page)', () => {
-  it('renders the AceBack name', () => {
+  it('renders the Discr name', () => {
     render(<Home />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('AceBack');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Discr');
   });
 
   it('renders the tagline', () => {

@@ -1,11 +1,11 @@
-# AceBack Web - Project Memory
+# Discr Web - Project Memory
 
 This file contains persistent context for Claude Code sessions on this project.
 It will be automatically loaded at the start of every session.
 
 ## Project Overview
 
-This is the web landing page for AceBack, built with Next.js and deployed on
+This is the web landing page for Discr, built with Next.js and deployed on
 Cloudflare Pages.
 
 **Key Details:**
@@ -16,7 +16,7 @@ Cloudflare Pages.
 - **Testing:** Jest with React Testing Library
 - **Backend:** Supabase API (lookup-qr-code endpoint)
 - **Deployment:** Cloudflare Pages
-- **Domain:** aceback.app
+- **Domain:** discrapp.com
 - **CI/CD:** GitHub Actions with release workflow
 - **Linting:** Pre-commit hooks for code quality
 
@@ -24,7 +24,7 @@ Cloudflare Pages.
 
 The web app serves two main purposes:
 
-1. **Root splash page** (`/`) - Simple landing page with AceBack logo
+1. **Root splash page** (`/`) - Simple landing page with Discr logo
 1. **QR code landing page** (`/d/[code]`) - For users who scan disc QR codes
    but don't have the mobile app installed
 
@@ -44,7 +44,7 @@ web/
 │   ├── .well-known/       # Universal Links / App Links config
 │   │   ├── apple-app-site-association
 │   │   └── assetlinks.json
-│   └── logo.svg           # AceBack logo
+│   └── logo.svg           # Discr logo
 ├── next.config.ts
 ├── package.json
 └── tsconfig.json
