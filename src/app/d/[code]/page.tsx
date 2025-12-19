@@ -92,7 +92,7 @@ export default function DiscLandingPage() {
     if (!code) return;
 
     // Store code for potential same-browser return
-    localStorage.setItem('aceback_deferred_code', code.toUpperCase());
+    localStorage.setItem('discr_deferred_code', code.toUpperCase());
 
     // Auto-copy to clipboard for deferred deep linking
     navigator.clipboard.writeText(code.toUpperCase()).catch(() => {
@@ -195,7 +195,7 @@ export default function DiscLandingPage() {
             Found this disc?
           </h3>
           <p className="text-violet-700 dark:text-violet-300 mb-4">
-            Download AceBack to help return it to its owner!
+            Download Discr to help return it to its owner!
           </p>
 
           {/* App Store Buttons */}

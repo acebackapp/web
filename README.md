@@ -1,19 +1,19 @@
-# AceBack Web
+# Discr Web
 
-![GitHub branch status](https://img.shields.io/github/checks-status/acebackapp/web/main)
-![GitHub Issues](https://img.shields.io/github/issues/acebackapp/web)
-![GitHub last commit](https://img.shields.io/github/last-commit/acebackapp/web)
-![GitHub repo size](https://img.shields.io/github/repo-size/acebackapp/web)
-![GitHub License](https://img.shields.io/github/license/acebackapp/web)
+![GitHub branch status](https://img.shields.io/github/checks-status/discrapp/web/main)
+![GitHub Issues](https://img.shields.io/github/issues/discrapp/web)
+![GitHub last commit](https://img.shields.io/github/last-commit/discrapp/web)
+![GitHub repo size](https://img.shields.io/github/repo-size/discrapp/web)
+![GitHub License](https://img.shields.io/github/license/discrapp/web)
 
 ## Introduction
 
-Web landing page for AceBack - the disc golf disc recovery app. Built with
+Web landing page for Discr - the disc golf disc recovery app. Built with
 Next.js and deployed on Cloudflare Pages.
 
 ### Key Features
 
-- Splash page with AceBack branding
+- Splash page with Discr branding
 - QR code landing page for users without the app installed
 - Smart App Banner integration for iOS
 - Deep linking support for app handoff
@@ -62,7 +62,7 @@ web/
 │       └── d/[code]/      # QR code landing page
 ├── public/
 │   ├── .well-known/       # Deep linking config
-│   └── logo.svg           # AceBack logo
+│   └── logo.svg           # Discr logo
 └── package.json
 ```
 
