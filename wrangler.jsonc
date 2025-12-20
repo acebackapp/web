@@ -7,8 +7,8 @@
   "workers_dev": false,
   "routes": [
     {
-      "pattern": "discr.app/*",
-      "zone_name": "discr.app"
+      "pattern": "discrapp.com/*",
+      "zone_name": "discrapp.com"
     }
   ],
   "assets": {
