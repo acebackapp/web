@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import * as Sentry from '@sentry/nextjs';
+import { reportError } from '@/lib/error-reporter';
 
 interface DiscData {
   found: boolean;
@@ -106,8 +106,9 @@ export default function DiscLandingPage() {
         const result = await response.json();
         setData(result);
       } catch (err) {
-        Sentry.captureException(err, {
-          extra: { code, operation: 'lookup-qr-code' },
+        reportError(err instanceof Error ? err : new Error(String(err)), {
+          code,
+          operation: 'lookup-qr-code',
         });
         setError('Failed to load disc information');
       } finally {
