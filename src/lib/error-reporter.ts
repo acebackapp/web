@@ -40,8 +40,9 @@ export async function reportError(error: Error, context?: ErrorContext): Promise
     return;
   }
 
-  const { publicKey, projectId, host } = parsed;
-  const endpoint = `https://${host}/api/${projectId}/store/?sentry_key=${publicKey}&sentry_version=7`;
+  const { publicKey } = parsed;
+  // Use tunnel to bypass ad blockers
+  const endpoint = '/api/sentry-tunnel';
 
   const payload = {
     event_id: crypto.randomUUID().replace(/-/g, ''),
