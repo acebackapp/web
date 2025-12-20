@@ -1,6 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import * as Sentry from '@sentry/nextjs';
+import { reportError } from '@/lib/error-reporter';
 import GlobalError from '@/app/global-error';
+
+jest.mock('@/lib/error-reporter');
 
 describe('GlobalError component', () => {
   const mockReset = jest.fn();
@@ -33,9 +35,11 @@ describe('GlobalError component', () => {
     expect(mockReset).toHaveBeenCalledTimes(1);
   });
 
-  it('captures exception with Sentry', () => {
+  it('reports error to Sentry', () => {
     render(<GlobalError error={mockError} reset={mockReset} />);
 
-    expect(Sentry.captureException).toHaveBeenCalledWith(mockError);
+    expect(reportError).toHaveBeenCalledWith(mockError, expect.objectContaining({
+      boundary: 'global',
+    }));
   });
 });

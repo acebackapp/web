@@ -1,13 +1,15 @@
 'use client';
 
-import * as Sentry from '@sentry/nextjs';
+import { reportError } from '@/lib/error-reporter';
 
 export default function TestSentryPage() {
   const triggerError = () => {
     try {
       throw new Error(`Test Sentry Error from Web ${Date.now()}`);
     } catch (error) {
-      Sentry.captureException(error);
+      if (error instanceof Error) {
+        reportError(error, { page: 'test-sentry', action: 'button-click' });
+      }
       alert('Error sent to Sentry! Check your dashboard.');
     }
   };
