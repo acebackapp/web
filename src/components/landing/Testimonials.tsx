@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     quote:
-      'The stickers are durable and the app is super easy. I put them on all my tournament discs now.',
+      'The stickers are durable and the app is super easy. I put them on all my discs now.',
     name: 'Jake R.',
     location: 'California',
   },
