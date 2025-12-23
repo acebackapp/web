@@ -12,14 +12,14 @@ const features = [
 export default function Pricing() {
   return (
     <section
-      id="pricing"
-      aria-labelledby="pricing-heading"
+      id="order"
+      aria-labelledby="order-heading"
       className="py-20 bg-white dark:bg-zinc-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2
-            id="pricing-heading"
+            id="order-heading"
             className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white"
           >
             Protect Your Discs Today
