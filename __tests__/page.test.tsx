@@ -31,7 +31,7 @@ describe('Home (Landing Page)', () => {
       screen.getByRole('region', { name: /features/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('region', { name: /see discr in action/i })
+      screen.getByRole('region', { name: /see discr. in action/i })
     ).toBeInTheDocument();
     expect(
       screen.getByRole('region', { name: /protect your discs today/i })

@@ -11,7 +11,7 @@ describe('Navigation', () => {
     render(<Navigation />);
     expect(screen.getByRole('link', { name: /how it works/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /features/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /pricing/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^order$/i })).toBeInTheDocument();
   });
 
   it('renders download CTA button', () => {
@@ -36,9 +36,9 @@ describe('Navigation', () => {
       'href',
       '#features'
     );
-    expect(screen.getByRole('link', { name: /pricing/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /^order$/i })).toHaveAttribute(
       'href',
-      '#pricing'
+      '#order'
     );
   });
 

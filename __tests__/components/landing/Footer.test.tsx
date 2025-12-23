@@ -16,7 +16,7 @@ describe('Footer', () => {
     render(<Footer />);
     expect(screen.getByRole('link', { name: /how it works/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /features/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /pricing/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^order$/i })).toBeInTheDocument();
   });
 
   it('renders legal links', () => {
@@ -27,7 +27,7 @@ describe('Footer', () => {
 
   it('renders copyright notice', () => {
     render(<Footer />);
-    expect(screen.getByText(/© \d{4} discr/i)).toBeInTheDocument();
+    expect(screen.getByText(/© \d{4} discr™/i)).toBeInTheDocument();
   });
 
   it('has contentinfo landmark', () => {

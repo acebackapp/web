@@ -5,7 +5,7 @@ describe('AppScreenshots', () => {
   it('renders section heading', () => {
     render(<AppScreenshots />);
     expect(
-      screen.getByRole('heading', { name: /see discr in action/i })
+      screen.getByRole('heading', { name: /see discr. in action/i })
     ).toBeInTheDocument();
   });
 
@@ -19,7 +19,7 @@ describe('AppScreenshots', () => {
 
   it('has proper section id', () => {
     render(<AppScreenshots />);
-    const section = screen.getByRole('region', { name: /see discr in action/i });
+    const section = screen.getByRole('region', { name: /see discr. in action/i });
     expect(section).toHaveAttribute('id', 'screenshots');
   });
 });

@@ -9,9 +9,12 @@ describe('Pricing', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders price', () => {
+  it('renders pricing tiers', () => {
     render(<Pricing />);
-    expect(screen.getByText(/\$1\.00/)).toBeInTheDocument();
+    // Three pricing tiers
+    expect(screen.getByText('$10')).toBeInTheDocument();
+    expect(screen.getByText('$15')).toBeInTheDocument();
+    expect(screen.getByText('$25')).toBeInTheDocument();
   });
 
   it('renders per sticker text', () => {
@@ -21,11 +24,10 @@ describe('Pricing', () => {
     expect(priceLabels.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('renders CTA button', () => {
+  it('renders CTA buttons', () => {
     render(<Pricing />);
-    expect(
-      screen.getByRole('link', { name: /order in the app/i })
-    ).toBeInTheDocument();
+    const orderButtons = screen.getAllByRole('link', { name: /order now/i });
+    expect(orderButtons.length).toBe(3);
   });
 
   it('has proper section id for navigation', () => {
@@ -33,7 +35,7 @@ describe('Pricing', () => {
     const section = screen.getByRole('region', {
       name: /protect your discs today/i,
     });
-    expect(section).toHaveAttribute('id', 'pricing');
+    expect(section).toHaveAttribute('id', 'order');
   });
 
   it('renders features list', () => {
