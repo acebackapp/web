@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -17,12 +18,15 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-black text-violet-900 dark:text-violet-100"
-            aria-label="Discr Home"
-          >
-            Discr
+          <Link href="/" aria-label="Discr Home" className="flex items-center">
+            <Image
+              src="/images/logo-optimized.svg"
+              alt="Discr"
+              width={100}
+              height={45}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

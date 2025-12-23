@@ -4,7 +4,7 @@ import Footer from '@/components/landing/Footer';
 describe('Footer', () => {
   it('renders the logo', () => {
     render(<Footer />);
-    expect(screen.getByText('Discr')).toBeInTheDocument();
+    expect(screen.getByAltText('Discr')).toBeInTheDocument();
   });
 
   it('renders the tagline', () => {

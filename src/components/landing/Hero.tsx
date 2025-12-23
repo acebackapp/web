@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AppStoreBadges from './AppStoreBadges';
 
 export default function Hero() {
@@ -6,16 +7,36 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-violet-50 to-white dark:from-zinc-900 dark:to-zinc-950 pt-16"
+      className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-violet-900 dark:text-violet-100 tracking-tight">
-          Discr
-        </h1>
-        <p className="mt-4 text-2xl sm:text-3xl font-semibold text-violet-700 dark:text-violet-300">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Image
+          src="/images/logo-optimized.svg"
+          alt="Discr"
+          width={300}
+          height={135}
+          className="h-24 sm:h-32 lg:h-40 w-auto mx-auto brightness-0 invert"
+          priority
+        />
+        <p className="mt-4 text-2xl sm:text-3xl font-semibold text-white">
           Get Yours Back
         </p>
-        <p className="mt-6 text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        <p className="mt-6 text-lg sm:text-xl text-zinc-200 max-w-2xl mx-auto">
           QR code stickers for disc golf disc recovery. Protect your discs and
           help other players return lost discs.
         </p>
@@ -24,7 +45,7 @@ export default function Hero() {
           <AppStoreBadges />
           <Link
             href="#how-it-works"
-            className="inline-flex items-center gap-2 text-violet-700 dark:text-violet-300 hover:text-violet-800 dark:hover:text-violet-200 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-white hover:text-violet-200 font-medium transition-colors"
           >
             Learn More
             <svg
@@ -43,9 +64,6 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-
-      {/* Decorative gradient orb */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
     </section>
   );
 }

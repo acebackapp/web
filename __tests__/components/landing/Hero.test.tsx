@@ -2,9 +2,15 @@ import { render, screen } from '@testing-library/react';
 import Hero from '@/components/landing/Hero';
 
 describe('Hero', () => {
-  it('renders the main headline', () => {
+  it('renders the logo', () => {
     render(<Hero />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Discr');
+    expect(screen.getByAltText('Discr')).toBeInTheDocument();
+  });
+
+  it('has a hero section with proper structure', () => {
+    render(<Hero />);
+    const section = screen.getByRole('region', { name: /hero/i });
+    expect(section).toBeInTheDocument();
   });
 
   it('renders the tagline', () => {

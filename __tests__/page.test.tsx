@@ -2,9 +2,11 @@ import { render, screen } from '@testing-library/react';
 import Home from '@/app/page';
 
 describe('Home (Landing Page)', () => {
-  it('renders the Discr name in hero', () => {
+  it('renders the Discr logo', () => {
     render(<Home />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Discr');
+    // Logo appears in Navigation, Hero, and Footer
+    const logos = screen.getAllByAltText('Discr');
+    expect(logos.length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the tagline', () => {

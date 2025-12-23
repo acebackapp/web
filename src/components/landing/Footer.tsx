@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -20,7 +21,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="text-2xl font-black text-violet-400">Discr</div>
+            <Image
+              src="/images/logo-optimized.svg"
+              alt="Discr"
+              width={100}
+              height={45}
+              className="h-10 w-auto brightness-0 invert"
+            />
             <p className="mt-2 text-zinc-400">Get Yours Back</p>
             <p className="mt-4 text-sm text-zinc-500">
               QR code stickers for disc golf disc recovery.
