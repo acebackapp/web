@@ -31,104 +31,14 @@ jobs:
 
   test:
     name: Test
-    runs-on: ubuntu-latest
-    outputs:
-      statements: ${{ steps.coverage.outputs.statements }}
-      branches: ${{ steps.coverage.outputs.branches }}
-      functions: ${{ steps.coverage.outputs.functions }}
-      lines: ${{ steps.coverage.outputs.lines }}
-      base_statements: ${{ steps.base-coverage.outputs.statements }}
-      base_branches: ${{ steps.base-coverage.outputs.branches }}
-      base_functions: ${{ steps.base-coverage.outputs.functions }}
-      base_lines: ${{ steps.base-coverage.outputs.lines }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests with coverage
-        run: npm test -- --coverage --coverageReporters=json-summary --coverageReporters=text
-
-      - name: Get coverage values
-        id: coverage
-        run: |
-          STATEMENTS=$(jq '.total.statements.pct' coverage/coverage-summary.json)
-          BRANCHES=$(jq '.total.branches.pct' coverage/coverage-summary.json)
-          FUNCTIONS=$(jq '.total.functions.pct' coverage/coverage-summary.json)
-          LINES=$(jq '.total.lines.pct' coverage/coverage-summary.json)
-          {
-            echo "statements=$STATEMENTS"
-            echo "branches=$BRANCHES"
-            echo "functions=$FUNCTIONS"
-            echo "lines=$LINES"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Restore main branch coverage from cache
-        if: github.event_name == 'pull_request'
-        id: cache-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: base-coverage/coverage-summary.json
-          key: coverage-main-latest
-
-      - name: Get base coverage values
-        id: base-coverage
-        run: |
-          if [ -f base-coverage/coverage-summary.json ]; then
-            STATEMENTS=$(jq '.total.statements.pct' base-coverage/coverage-summary.json)
-            BRANCHES=$(jq '.total.branches.pct' base-coverage/coverage-summary.json)
-            FUNCTIONS=$(jq '.total.functions.pct' base-coverage/coverage-summary.json)
-            LINES=$(jq '.total.lines.pct' base-coverage/coverage-summary.json)
-          else
-            STATEMENTS=0
-            BRANCHES=0
-            FUNCTIONS=0
-            LINES=0
-          fi
-          {
-            echo "statements=$STATEMENTS"
-            echo "branches=$BRANCHES"
-            echo "functions=$FUNCTIONS"
-            echo "lines=$LINES"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Cache main branch coverage
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/cache/save@v4
-        with:
-          path: coverage/coverage-summary.json
-          key: coverage-main-${{ github.sha }}
-
-      - name: Update latest main coverage cache
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/cache/save@v4
-        with:
-          path: coverage/coverage-summary.json
-          key: coverage-main-latest
-
-  coverage-report:
-    name: Coverage Report
-    needs: test
-    if: github.event_name == 'pull_request'
-    uses: discrapp/.github/.github/workflows/coverage.yml@main
+    uses: discrapp/.github/.github/workflows/test.yml@main
     with:
       coverage_threshold: 25
-      pr_statements: ${{ needs.test.outputs.statements }}
-      pr_branches: ${{ needs.test.outputs.branches }}
-      pr_functions: ${{ needs.test.outputs.functions }}
-      pr_lines: ${{ needs.test.outputs.lines }}
-      base_statements: ${{ needs.test.outputs.base_statements }}
-      base_branches: ${{ needs.test.outputs.base_branches }}
-      base_functions: ${{ needs.test.outputs.base_functions }}
-      base_lines: ${{ needs.test.outputs.base_lines }}
-    secrets:
-      HEIMDALLR_TOKEN: ${{ secrets.HEIMDALLR_TOKEN }}
+      test_command: "npm test -- --coverage --coverageReporters=json-summary"
+    secrets: inherit
+    permissions:
+      contents: read
+      pull-requests: write
 
   build:
     name: Build
