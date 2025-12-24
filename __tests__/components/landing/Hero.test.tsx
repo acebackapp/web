@@ -13,6 +13,11 @@ describe('Hero', () => {
     expect(section).toBeInTheDocument();
   });
 
+  it('renders the tagline', () => {
+    render(<Hero />);
+    expect(screen.getByText('Get Yours Back')).toBeInTheDocument();
+  });
+
   it('renders the subtitle description', () => {
     render(<Hero />);
     expect(
