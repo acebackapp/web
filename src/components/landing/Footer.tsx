@@ -28,8 +28,8 @@ export default function Footer() {
               height={45}
               className="h-10 w-auto"
             />
-            <p className="mt-2 text-zinc-400">Get Yours Back</p>
-            <p className="mt-4 text-sm text-zinc-500">
+            <p className="mt-2 text-zinc-300">Get Yours Back</p>
+            <p className="mt-4 text-sm text-zinc-400">
               QR code stickers for disc golf disc recovery.
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-zinc-400 hover:text-white transition-colors"
+                    className="text-zinc-300 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-zinc-400 hover:text-white transition-colors"
+                    className="text-zinc-300 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-zinc-800 text-center text-sm text-zinc-500">
+        <div className="mt-12 pt-8 border-t border-zinc-800 text-center text-sm text-zinc-400">
           © {currentYear} Discr™. All rights reserved.
         </div>
       </div>

@@ -35,7 +35,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-zinc-600 hover:text-violet-700 dark:text-zinc-400 dark:hover:text-violet-300 transition-colors"
+                className="text-sm font-medium text-zinc-700 hover:text-violet-700 dark:text-zinc-300 dark:hover:text-violet-300 transition-colors"
               >
                 {link.label}
               </Link>
@@ -96,7 +96,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-zinc-600 hover:text-violet-700 dark:text-zinc-400 dark:hover:text-violet-300 transition-colors"
+                  className="text-sm font-medium text-zinc-700 hover:text-violet-700 dark:text-zinc-300 dark:hover:text-violet-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

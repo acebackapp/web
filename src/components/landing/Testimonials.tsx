@@ -26,7 +26,7 @@ export default function Testimonials() {
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-zinc-900 dark:text-white">
           What Players Are Saying
         </h2>
-        <p className="mt-4 text-lg text-center text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-center text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
           Join the disc golf community protecting their discs with Discr™
         </p>
 
@@ -45,7 +45,7 @@ export default function Testimonials() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
 
-              <p className="mt-4 text-zinc-600 dark:text-zinc-400 italic">
+              <p className="mt-4 text-zinc-700 dark:text-zinc-300 italic">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
 
@@ -53,7 +53,7 @@ export default function Testimonials() {
                 <div className="font-semibold text-zinc-900 dark:text-white">
                   {testimonial.name}
                 </div>
-                <div className="text-sm text-zinc-500 dark:text-zinc-500">
+                <div className="text-sm text-zinc-600 dark:text-zinc-400">
                   {testimonial.location}
                 </div>
               </footer>

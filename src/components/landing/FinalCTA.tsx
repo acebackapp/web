@@ -11,7 +11,7 @@ export default function FinalCTA() {
         <h2 className="text-3xl sm:text-4xl font-bold text-white">
           Ready to Protect Your Discs?
         </h2>
-        <p className="mt-4 text-lg text-violet-200 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-violet-100 max-w-2xl mx-auto">
           Join thousands of disc golfers who never lose their favorite discs.
           Download the app and order your stickers today.
         </p>
