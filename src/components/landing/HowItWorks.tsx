@@ -75,7 +75,7 @@ export default function HowItWorks() {
         >
           How It Works
         </h2>
-        <p className="mt-4 text-lg text-center text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-center text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
           Protecting your discs is simple with Discr™
         </p>
 
@@ -100,7 +100,7 @@ export default function HowItWorks() {
               <h3 className="text-xl font-semibold text-zinc-900 dark:text-white">
                 {step.title}
               </h3>
-              <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 text-zinc-700 dark:text-zinc-300">
                 {step.description}
               </p>
             </div>

@@ -12,12 +12,13 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-bg.jpg"
-          alt=""
+          src="/images/hero-bg.webp"
+          alt="Disc golf course at sunset"
           fill
           className="object-cover object-center"
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 768px, (max-width: 1200px) 1200px, 1920px"
+          quality={85}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
@@ -26,12 +27,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Image
-          src="/images/logo-white-plain.svg"
+          src="/images/logo-white.webp"
           alt="Discr"
           width={300}
           height={135}
           className="h-24 sm:h-32 lg:h-40 w-auto mx-auto"
           priority
+          sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 300px"
         />
         <p className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
           Get Yours Back

@@ -49,7 +49,7 @@ export default function Pricing() {
           >
             Protect Your Discs Today
           </h2>
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+          <p className="mt-4 text-lg text-zinc-700 dark:text-zinc-300">
             Simple, affordable protection for your entire collection
           </p>
         </div>
@@ -89,13 +89,13 @@ export default function Pricing() {
               </div>
 
               <div
-                className={`mt-1 text-sm ${tier.featured ? 'text-violet-300' : 'text-zinc-500 dark:text-zinc-400'}`}
+                className={`mt-1 text-sm ${tier.featured ? 'text-violet-200' : 'text-zinc-600 dark:text-zinc-300'}`}
               >
                 ${tier.perSticker} per sticker
               </div>
 
               <p
-                className={`mt-4 text-sm ${tier.featured ? 'text-violet-200' : 'text-zinc-600 dark:text-zinc-400'}`}
+                className={`mt-4 text-sm ${tier.featured ? 'text-violet-100' : 'text-zinc-700 dark:text-zinc-300'}`}
               >
                 {tier.description}
               </p>

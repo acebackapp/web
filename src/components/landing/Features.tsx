@@ -130,7 +130,7 @@ export default function Features() {
         >
           Features
         </h2>
-        <p className="mt-4 text-lg text-center text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-center text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
           Everything you need to protect your disc collection
         </p>
 
@@ -146,7 +146,7 @@ export default function Features() {
               <h3 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-white">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 text-zinc-700 dark:text-zinc-300">
                 {feature.description}
               </p>
             </div>
